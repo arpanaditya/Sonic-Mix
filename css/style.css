@@ -2,4 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #fce38a;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#p_app {
+    width: 25.625rem;
+    height: 36.813rem;
+    position: relative;
+    top: 5rem;
+    border-radius: 50px;
+    box-shadow: 15px 15px 20px 10px #b3b3b3;
+    border: 1px solid white;
+    background-color: #f38181;
+}
+
+#p_img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    background-position: center; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-image: url('./img/test.png');  
 }
