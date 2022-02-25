@@ -57,14 +57,21 @@ button {
     border: none;
     background: none;
     cursor: pointer;
+    box-shadow: 6px 8px 18px rgba(138, 87, 87, 1);
 }
+
+#previous:active, #play:active, #next:active {
+    color: black;
+    background-color: #dd4c4c;
+}
+
 
 #p_control {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
     font-size: 1.5rem;
     background: none;
 }
