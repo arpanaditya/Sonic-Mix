@@ -1,7 +1,7 @@
 ---
 name: 🎶 Add a song
 about: Add a new song to the list.
-title: '[SONG] <title>'
+title: 'Add: <Song Name>'
 labels: add song
 assignees: ''
 
