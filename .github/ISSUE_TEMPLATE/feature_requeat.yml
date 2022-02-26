@@ -1,8 +1,7 @@
 name: New Feature
 description: Use this template for tracking new features
-title: "[DATE]: [FEATURE NAME]"
-assignees: arpanaditya
-labels: enhancement
+title: "[DATE]: <FEATURE NAME>"
+labels: [enhancement]
 body:
 - type: checkboxes
  attributes:
