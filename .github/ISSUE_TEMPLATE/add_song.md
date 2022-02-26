@@ -2,17 +2,19 @@
 name: 🎶 Add a song
 about: Add a new song to the list.
 title: '[SONG] <title>'
-labels: Bug, Needs Triage
+labels: add song
 assignees: ''
 
 ---
 
-### Checks before adding a new music:
+### Checks before adding new music:
    
-Example: Checks before adding a music:
-[ ] Add the music file in the 'music' folder
-[ ] Add the album image into the 'img' folder
-[ ] Add the following details 
+Example: Checks before adding a music: 
+>convert [ ] to [x] to tick the checkboxes
+- [ ] Add the music file in the `music` folder
+- [ ] Add the album image into the `img` folder
+- [ ] Add the following details 
+
 ```
 {
    title: 'Music Name',
@@ -25,4 +27,6 @@ Example: Checks before adding a music:
 ### Thank You:
 
 Thank You for your contribution! 
+
+
 
