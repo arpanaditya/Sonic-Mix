@@ -22,7 +22,7 @@ body:
  attributes:
   label: Expected Behavior
   description: Describe what you expect to happen.
- validation: 
+ validations: 
   required: false
 - type: textarea
   attributes:
