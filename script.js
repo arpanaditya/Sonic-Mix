@@ -1,4 +1,5 @@
 window.onload = () => {
+
   const song_img = document.querySelector('#p_img');
   const song_title = document.querySelector('#p_title');
   const song_artist = document.querySelector('#p_desc');
@@ -7,8 +8,15 @@ window.onload = () => {
   const next_btn = document.querySelector('#next');
   const previous_btn = document.querySelector('#previous');
   const player = document.querySelector('#player');
+
+  const seek_slider = document.querySelector(".seek_slider");
+
+  const curr_time = document.querySelector(".current-time");
+  const total_duration = document.querySelector(".total-duration");
   let curr_song_index;
   let next_song_index;
+
+  let curr_track = document.createElement('audio');
 
   // Music List
 
@@ -82,6 +90,7 @@ window.onload = () => {
 
 
   function changeMusic(next = true) {
+    
     if (next) {
       curr_song_index++;
       next_song_index = curr_song_index + 1;
@@ -106,6 +115,46 @@ window.onload = () => {
     togglePlay();
   }
 
+  function resetValues() {
+    curr_time.textContent = "00:00";
+    total_duration.textContent = "00:00";
+    seek_slider.value = 0;
+  }
+
+  
+ function seek_(){
+
+   seekto = curr_track.duration * (seek_slider.value / 100);
+  curr_track.currentTime = seekto;
+}
+
+
+function seekUpdate() {
+  let seekPosition = 0;
+  
+  // Check if the current track duration is a legible number
+  if (!isNaN(curr_track.duration)) {
+    seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+    seek_slider.value = seekPosition;
+  
+    // Calculate the time left and the total duration
+    let currentMinutes = Math.floor(curr_track.currentTime / 60);
+    let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+    let durationMinutes = Math.floor(curr_track.duration / 60);
+    let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+  
+    // Add a zero to the single digit time values
+    if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+    if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+    if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+    if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+  
+    // Display the updated duration
+    curr_time.textContent = currentMinutes + ":" + currentSeconds;
+    total_duration.textContent = durationMinutes + ":" + durationSeconds;
+  }
+}
+  
   // Alternative Way to change music using 2 functions changeMusic(next), changeMusic(previous)
   // function changeMusic(next) {
   //   curr_song_index++;
@@ -141,4 +190,16 @@ window.onload = () => {
     song_artist.innerText = music[curr_song_index].artist;
     player.src = music[curr_song_index].song_path;
   }
+
+  function getDuration(src, cb) {
+    var audio = new Audio();
+    $(audio).on("loadedmetadata", function(){
+        cb(audio.duration);
+    });
+    audio.src = src;
+}
+getDuration(music[0].song_path, function(length) {
+    console.log('I got length ' + length);
+    document.getElementById("duration").textContent = length;
+});
 }
