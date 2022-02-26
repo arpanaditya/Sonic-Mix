@@ -13,17 +13,17 @@ body:
  validations:
   required: true
 - type: textarea
-	attributes:
-		label: Current Behavior
-		description: Describe what you are experiencing.
-	validations:
-		required: false
+ attributes:
+  label: Current Behavior
+  description: Describe what you are experiencing.
+ validations:
+  required: false
 - type: textarea
-	attributes:
-		label: Expected Behavior
-		description: Describe what you expect to happen.
-	validation: 
-		required: false
+ attributes:
+  label: Expected Behavior
+  description: Describe what you expect to happen.
+ validation: 
+  required: false
 - type: textarea
   attributes:
     label: Steps To Reproduce
