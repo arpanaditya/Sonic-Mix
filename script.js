@@ -7,8 +7,14 @@ window.onload = () => {
   const next_btn = document.querySelector('#next');
   const previous_btn = document.querySelector('#previous');
   const player = document.querySelector('#player');
+  let progress = document.getElementById("progress");
   let curr_song_index;
   let next_song_index;
+  "use strict";
+  let percent = 0;
+  let minute = 0;
+  let second = 0;
+  let cron;
 
   // Music List
 
@@ -71,10 +77,12 @@ window.onload = () => {
   function togglePlay() {
     if (player.paused) {
       player.play();
+      startTimer();
       play_btn_icon.classList.remove('fa-play');
       play_btn_icon.classList.add('fa-pause');
     } else {
       player.pause();
+      pauseTimer();
       play_btn_icon.classList.remove('fa-pause');
       play_btn_icon.classList.add('fa-play');
     }
@@ -82,6 +90,7 @@ window.onload = () => {
 
 
   function changeMusic(next = true) {
+    resetTimer();
     if (next) {
       curr_song_index++;
       next_song_index = curr_song_index + 1;
@@ -134,6 +143,45 @@ window.onload = () => {
   //     togglePlay();
   // }
 
+  // Music timer
+  function startTimer() {
+    pauseTimer();
+    cron = setInterval(() => { timer(); }, 1000);
+  }
+
+  function pauseTimer() {
+    clearInterval(cron);
+  }
+  
+  function resetTimer() {
+    percent=0;
+    progress.style.width = percent+'%'
+    minute=0;
+    second=0;
+    document.getElementById('minute').innerText = '00';
+    document.getElementById('second').innerText = '00';
+  }
+  function timer() {
+    if(percent>=100){
+      changeMusic();
+    }
+    second++;
+    if (second == 60) {
+      second = 0;
+      minute++;
+    }
+    const totalDuration=document.querySelector('#player').duration;
+    percent = (minute*60 + second)/parseInt(totalDuration)*100
+    progress.style.width = percent+'%'
+    //console.log(totalDuration)
+    document.getElementById('minute').innerText = returnData(minute);
+    document.getElementById('second').innerText = returnData(second);
+  }
+  
+  function returnData(input) {
+    return input >= 10 ? input : `0${input}`
+  }  
+  
   function updatePlayer() {
     song_img.style =
       "background-image: url('" + music[curr_song_index].image_path + "')";
