@@ -48,6 +48,12 @@ window.onload = () => {
       artist: 'Shawn Mendes',
       song_path: 'music/treat_you_better.mp3',
       image_path: 'img/treat_you_better.jpg'
+    },
+    {
+      title: 'Sunflower',
+      artist: 'Post Malone',
+      song_path: 'music/Sunflower.mp3',
+      image_path: 'img/sunflower.jpg'
     }
   ];
 
