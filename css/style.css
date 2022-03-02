@@ -113,7 +113,7 @@ button {
 }
 #progress {
     width: 1px;
-    height: 3px;
-    background: #006B5A;
+    height: 5px;
+    background: white;
     transition: width .1s linear;
 }
