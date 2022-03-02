@@ -111,3 +111,9 @@ button {
     background: none;
     color: white;
 }
+#progress {
+    width: 1px;
+    height: 5px;
+    background: white;
+    transition: width .1s linear;
+}
