@@ -56,7 +56,8 @@ window.onload = () => {
       image_path: 'img/sunflower.jpg'
     }
   ];
-
+   // Autoplay next song when current song finishes
+  player.addEventListener("ended", changeMusic);
   play_btn.addEventListener('click', togglePlay);
   next_btn.addEventListener('click', () => changeMusic());
   previous_btn.addEventListener('click', () => changeMusic(false));
