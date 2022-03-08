@@ -7,13 +7,11 @@ assignees: ''
 
 ---
 
-### Checks before adding new music:
+### To dos before adding new music:
    
-Example: Checks before adding a music: 
->convert [ ] to [x] to tick the checkboxes
-- [ ] Add the music file in the `music` folder
-- [ ] Add the album image into the `img` folder
-- [ ] Add the following details 
+- Add the music file in the `music` folder
+- Add the album image into the `img` folder
+- Add the following details 
 
 ```
 {
@@ -24,9 +22,4 @@ Example: Checks before adding a music:
 }
 ```
 
-### Thank You:
-
 Thank You for your contribution! 
-
-
-
