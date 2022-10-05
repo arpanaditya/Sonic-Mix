@@ -1,42 +1,34 @@
-<h1 align='center'>Sonic Mix</h1>
-<h2 align='center'>A web application to listen to music</h2>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-<p align='center'><img src='https://user-images.githubusercontent.com/75975428/155754320-dbe53df6-6c2d-409f-baf7-daae60382fd7.jpeg' height="500px" width="700px"></p>
+## Getting Started
 
----
+First, run the development server:
 
-<h2>How to contribute to this project?</h2>
- <h3>1. Add a feature or fix a bug</h3>
-       Follow the <a href="CONTRIBUTING.md">Contributing Guidelines</a> to add a feature or fix a bug. 
-      <br>
-      <br>
- <h3>2. Add a song to the list</h3>
- 
-Step 1: Add the music file into the `music` folder. <br>
-Step 2: Add the album image into the `img` folder. <br>
-Step 3: Add the following details -
-```
-{
-   title: 'Music Name',
-   artist: 'Artist Name',
-   song_path: 'music/music_name.mp3',
-   image_path: 'img/album_image_name.jpg'
-}
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-You need to add these below the other one which is separared by a comma.
-```
-{
-//Music details
-},
-{
-//Music details
-},
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-<h3>Now create a pull request and wait for it to get merged. <br><br>
-After successfully merging your PR you can find and listen to your music in this web app. 🥳 </h3>
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-<br>
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-<h4 align='center'> Made with ❤️ by Aditya Arpan </h4>
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
