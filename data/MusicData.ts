@@ -53,5 +53,11 @@ export const MUSIC_DATA:musicDataType[] = [
       artist: 'Post Malone',
       song_path: '/music/Sunflower.mp3',
       image_path: '/img/sunflower.jpg'
+    },
+    {
+      title: 'Tu banke hawa',
+      artist: 'JUBIN NAUTIYAL',
+      song_path: '/music/TuBankeHawa.mp3',
+      image_path: '/img/bankehawa.jpg'
     }
   ];
