@@ -162,7 +162,7 @@ const Home: NextPage = () => {
             {/*------------------------------NAME---------------------------*/}
 
             <div className='flex flex-row justify-center items-center text-center text-xl font-bold tracking-wider text-gray-50/60 uppercase select-none pl-1'>
-              <div className='pr-1'>Soinc mix</div> <BsSoundwave size={26} />
+              <div className='pr-1'>Sonic mix</div> <BsSoundwave size={26} />
             </div>
 
             {/*------------------------------MUSIC IMAGE---------------------------*/}
