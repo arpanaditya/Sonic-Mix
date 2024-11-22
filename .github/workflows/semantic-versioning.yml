@@ -28,12 +28,12 @@ jobs:
         # Define version bump type based on commit message
         if [[ "$COMMIT_MESSAGE" =~ ^feat!: ]]; then
           echo "version_bump=MAJOR" >> $GITHUB_OUTPUT
-        elif [[ "$COMMIT_MESSAGE" =~ ^(feat|fix|chore): ]]; then
+        elif [[ "$COMMIT_MESSAGE" =~ ^feat: ]]; then
+          echo "version_bump=MINOR" >> $GITHUB_OUTPUT
+        elif [[ "$COMMIT_MESSAGE" =~ ^(fix|perf|refactor|style|docs|test|chore): ]]; then
           echo "version_bump=PATCH" >> $GITHUB_OUTPUT
-        elif [[ "$COMMIT_MESSAGE" =~ ^(docs|style|refactor|test|perf): ]]; then
-          echo "version_bump=NONE" >> $GITHUB_OUTPUT
         else
-          echo "version_bump=PATCH" >> $GITHUB_OUTPUT
+          echo "version_bump=none" >> $GITHUB_OUTPUT
         fi
 
     - name: Bump Version
