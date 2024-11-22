@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/arpanaditya/Sonic-Mix/compare/v1.0.0...v1.1.0) (2024-11-22)
+
+
+### Features
+
+* triggering workflow `feat` ([fe0d554](https://github.com/arpanaditya/Sonic-Mix/commit/fe0d554e95836ed1d2e22dfbbd84dbb385145ba8))
+
 # 1.0.0 (2024-11-22)
 
 
