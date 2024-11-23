@@ -259,3 +259,4 @@ export default Home;
 // Bump patch by fix
 // Bump minor by feat
 // Bump patch by docs
+// Bump major by fix!
