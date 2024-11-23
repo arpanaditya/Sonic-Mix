@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/arpanaditya/Sonic-Mix/compare/v1.1.0...v1.2.0) (2024-11-23)
+
+
+### Features
+
+* triggering workflow ([6ccfcff](https://github.com/arpanaditya/Sonic-Mix/commit/6ccfcff080c798a718e01d9091eea721abc88b9e))
+
 # [1.1.0](https://github.com/arpanaditya/Sonic-Mix/compare/v1.0.0...v1.1.0) (2024-11-22)
 
 
