@@ -253,22 +253,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-
-// Bump major by feat!
-// Bump patch by fix
-// Bump minor by feat
-// Bump patch by docs
-// Bump major by fix! 
-// The prev bump was unsuccessful
-// Bump major by fix!
-// Trying again
-// Bump major by fix!
-// Trying again
-// Bump major by fix!
-// Trying again
-// Bump major by fix!
-// Trying again
-// Bump major by fix!
-// Trying again
-// Bump major by fix!
