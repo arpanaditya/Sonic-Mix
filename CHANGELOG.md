@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/arpanaditya/Sonic-Mix/compare/v1.1.2...v2.0.0) (2024-11-23)
+
+
+* fix!: bump major ([0cd8031](https://github.com/arpanaditya/Sonic-Mix/commit/0cd80314ab97e76446a406ec2b1a8663f7a97001))
+
+
+### BREAKING CHANGES
+
+* This update modifies the API endpoint for retrieving user data, which is no longer compatible with previous versions.
+
 ## [1.1.2](https://github.com/arpanaditya/Sonic-Mix/compare/v1.1.1...v1.1.2) (2024-11-23)
 
 
