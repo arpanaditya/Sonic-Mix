@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/arpanaditya/Sonic-Mix/compare/v1.0.0...v1.0.1) (2024-11-23)
+
+
+### Bug Fixes
+
+* bump patch ([0dc57c9](https://github.com/arpanaditya/Sonic-Mix/commit/0dc57c9573001073e9e9e1cf7976637c2e706fe8))
+
 # 1.0.0 (2024-11-23)
 
 
