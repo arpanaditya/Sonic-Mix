@@ -1,65 +1,99 @@
+# name: Semantic Versioning
+
+# on:
+#   push:
+#     branches: [ main, master ]
+
+# jobs:
+#   version-bump:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
+#       with:
+#         fetch-depth: 0
+
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: '20'
+
+#     - name: Extract Version from Commit Message
+#       id: extract-version
+#       run: |
+#         # Get the latest commit message
+#         COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+
+#         # Define version bump type based on commit message
+#         if [[ "$COMMIT_MESSAGE" =~ ^feat!: ]]; then
+#           echo "version_bump=MAJOR" >> $GITHUB_OUTPUT
+#         elif [[ "$COMMIT_MESSAGE" =~ ^feat: ]]; then
+#           echo "version_bump=MINOR" >> $GITHUB_OUTPUT
+#         elif [[ "$COMMIT_MESSAGE" =~ ^(fix|perf|refactor|style|docs|test|chore): ]]; then
+#           echo "version_bump=PATCH" >> $GITHUB_OUTPUT
+#         else
+#           echo "version_bump=none" >> $GITHUB_OUTPUT
+#         fi
+
+#     - name: Bump Version
+#       id: bump-version
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       run: |
+#         # Install semantic-release
+#         npm install -g semantic-release @semantic-release/git @semantic-release/changelog
+
+#         # Create release configuration
+#         cat > .releaserc.json << EOF
+#         {
+#           "branches": ["main", "master"],
+#           "plugins": [
+#             "@semantic-release/commit-analyzer",
+#             "@semantic-release/release-notes-generator",
+#             "@semantic-release/changelog",
+#             ["@semantic-release/git", {
+#               "assets": ["CHANGELOG.md", "package.json"],
+#               "message": "chore(release): \${nextRelease.version} [skip ci]"
+#             }],
+#             "@semantic-release/github"
+#           ]
+#         }
+#         EOF
+
+#         # Run semantic-release
+#         npx semantic-release
 name: Semantic Versioning
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
 
 jobs:
   version-bump:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-    - name: Extract Version from Commit Message
-      id: extract-version
-      run: |
-        # Get the latest commit message
-        COMMIT_MESSAGE=$(git log -1 --pretty=%B)
-        
-        # Define version bump type based on commit message
-        if [[ "$COMMIT_MESSAGE" =~ ^feat!: ]]; then
-          echo "version_bump=MAJOR" >> $GITHUB_OUTPUT
-        elif [[ "$COMMIT_MESSAGE" =~ ^feat: ]]; then
-          echo "version_bump=MINOR" >> $GITHUB_OUTPUT
-        elif [[ "$COMMIT_MESSAGE" =~ ^(fix|perf|refactor|style|docs|test|chore): ]]; then
-          echo "version_bump=PATCH" >> $GITHUB_OUTPUT
-        else
-          echo "version_bump=none" >> $GITHUB_OUTPUT
-        fi
+      # Step 3: Install semantic-release and run it
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          # Install semantic-release and plugins
+          npm install -g semantic-release @semantic-release/git @semantic-release/changelog
 
-    - name: Bump Version
-      id: bump-version
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        # Install semantic-release
-        npm install -g semantic-release @semantic-release/git @semantic-release/changelog
-
-        # Create release configuration
-        cat > .releaserc.json << EOF
-        {
-          "branches": ["main", "master"],
-          "plugins": [
-            "@semantic-release/commit-analyzer",
-            "@semantic-release/release-notes-generator",
-            "@semantic-release/changelog",
-            ["@semantic-release/git", {
-              "assets": ["CHANGELOG.md", "package.json"],
-              "message": "chore(release): \${nextRelease.version} [skip ci]"
-            }],
-            "@semantic-release/github"
-          ]
-        }
-        EOF
-
-        # Run semantic-release
-        npx semantic-release
+          # Run semantic-release to analyze commits and update versions
+          npx semantic-release
