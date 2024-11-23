@@ -255,4 +255,4 @@ const Home: NextPage = () => {
 export default Home;
 
 
-// just a minor change to check the workflow trigger [docs] triggering workflow
+// just a minor change to check the workflow trigger [chore] triggering workflow
