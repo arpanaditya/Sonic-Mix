@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Custom Action
+        uses: arpanaditya/semantic-versioning-action@main  # Replace with your actual repo and branch
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
